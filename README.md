@@ -1,5 +1,26 @@
-# electron-webpack-quick-start
-> A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
+# electron builder & kinect azure
+
+> A demo project using my [kinect-azure](https://github.com/wouterverweirder/kinect-azure) library in an electron builder project.
+
+This demo uses the kinect body tracking SDK. In order for body tracking to work, the necessary DLLs need to be in the DLL lookup path. The easiest way to ensure this, is to have the DLL files in your application's directory.
+
+The package.json file contains an "extraFiles" setting for electron builder to copy those DLL files when creating a release build:
+
+```json
+  "build": {
+    "appId": "be.aboutme.kinect-azure.electron-builder-kinect-azure-demo",
+    "win": {
+      "extraFiles": [
+        {
+          "from": "C:\\Program Files\\Azure Kinect Body Tracking SDK\\tools",
+          "to": "./"
+        }
+      ]
+    }
+  },
+```
+
+## electron-webpack
 
 Thanks to the power of `electron-webpack` this template comes packed with...
 
@@ -10,7 +31,7 @@ Thanks to the power of `electron-webpack` this template comes packed with...
 
 Make sure to check out [`electron-webpack`'s documentation](https://webpack.electron.build/) for more details.
 
-## Getting Started
+### Getting Started
 Simply clone down this repository, install dependencies, and get started on your application.
 
 The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
