@@ -4,6 +4,12 @@
 
 This demo uses the kinect body tracking SDK. In order for body tracking to work, the necessary DLLs need to be in the DLL lookup path. The easiest way to ensure this, is to have the DLL files in your application's directory.
 
+I have added a "copy-dlls" script in the package.json file to copy the dlls from the body tracking SDK into this project's directory. Run it before trying to start the dev script:
+
+```
+npm run copy-dlls
+```
+
 The package.json file contains an "extraFiles" setting for electron builder to copy those DLL files when creating a release build:
 
 ```json

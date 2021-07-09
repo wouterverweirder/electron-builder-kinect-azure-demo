@@ -14,6 +14,7 @@
     }
   },
   "scripts": {
+    "copy-dlls": "xcopy \"C:\\Program Files\\Azure Kinect Body Tracking SDK\\tools\\\" . /H /C /Y",
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
